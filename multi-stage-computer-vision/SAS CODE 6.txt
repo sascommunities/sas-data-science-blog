@@ -1,0 +1,10 @@
+proc cas;
+	deepLearn.dlTrain / table={name='classifdata_w_weights_', where='_partind_=1'} model='resnet50_caffe' 
+        modelWeights={name='ConVTrainedWeights_d', replace=1}
+        bestweights={name='baselinebestweights', replace=1}
+		
+        GPU=True
+		weight="weight"
+        …... code continued but not shown for brevity
+;
+quit;

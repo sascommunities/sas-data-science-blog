@@ -1,0 +1,5 @@
+table.update /  
+table={name='classifdata_with_weights', 
+where="_label_ = 'green_scarf'"}
+	set = {{var="weight", value="68.89"}};
+………code continued but not shown for brevity…..

@@ -1,0 +1,9 @@
+proc cas;
+                dlScore / 
+table={name="total_data_Shuffled"} 
+model='Tiny-Yolov2' 
+initWeights='BestTinyYolo_w'
+casout={name='ScoredData', replace=1}
+copyVars={'idjoin','_partind_'} 
+gpu=true;
+Quit;

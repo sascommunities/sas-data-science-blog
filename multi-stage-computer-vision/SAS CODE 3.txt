@@ -1,0 +1,7 @@
+proc cas;
+   deepLearn.dlJoin /                                 
+      annotatedTable={name="ScoredData"}
+      casOut={name="high_res_extractions", replace=1}
+      id="idjoin"
+      table={name="highresolution_images_w_id"};
+quit;

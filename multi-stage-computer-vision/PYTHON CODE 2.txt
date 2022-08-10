@@ -1,0 +1,7 @@
+s.dlscore(
+           table = dict(name='total_data_shuffled'),
+           model = 'Tiny-Yolov2',
+           initWeights = 'BestTinyYolo_w',
+           casout = dict(name='ScoredData', replace=True),
+           copyVars = ['idjoin','_PartInd_'],
+           gpu = True)

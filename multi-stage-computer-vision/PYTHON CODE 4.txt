@@ -1,0 +1,7 @@
+s.image.extractDetectedObjects(
+                                casout = dict(name="ObjectsExtracted",replace=True),
+                                coordType = 'YOLO',
+                                maxobjects = 1,
+                                extractType = 'crop',
+                                table = 'high_res_extractions'
+                              )

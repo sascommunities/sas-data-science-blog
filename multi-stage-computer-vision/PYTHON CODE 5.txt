@@ -1,0 +1,5 @@
+s.table.update(
+table=dict(name = 'train_w_weights', 
+where="_label_ = 'green_scarf'"),
+    set=[ {"var":"weight", "value":"68.89"}])
+…......

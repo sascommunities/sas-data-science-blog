@@ -1,0 +1,9 @@
+s.deepLearn.dlTrain(
+                     table = dict(name = 'classifdata_w_weights_', where='_partind_=1'),
+                                  model        =''resnet50_caffe ',
+                                  modelWeights =dict(name='ConVTrainedWeights_d', replace=True), 
+                                  bestweights  =dict(name= ‘baselinebestweights’ , replace=True),
+                                  weight = ’weight’,
+                                  gpu=True,
+                                  …....            
+)

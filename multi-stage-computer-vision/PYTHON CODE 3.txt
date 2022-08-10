@@ -1,0 +1,6 @@
+s.dljoin(
+          annotatedtable = "ScoredData", 
+          casout = dict(name='high_res_extractions', replace=True),
+          id = 'idjoin',
+          table = 'high_res_images_w_id' 
+        ) 

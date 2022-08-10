@@ -1,0 +1,8 @@
+proc cas;
+image.extractDetectedObjects /
+	casOut={name='ObjectsExtracted', replace=true}
+	coordType='YOLO'
+	maxObjects=1
+  	extractType='crop' 
+	Table={name='high_res_extractions'};
+quit;

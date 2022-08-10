@@ -1,0 +1,34 @@
+proc cas;
+removelayer / model='Tiny-Yolov2' name='detection1';
+
+AddLayer / model='Tiny-Yolov2' name='b_n_9' layer={type='BATCHNORM' act='relu'} srcLayers={'convo.9'};
+ 
+AddLayer / model='Tiny-Yolov2' name='ConVL7' layer={type='CONVO' nFilters=12  width=1 height=1 stride=1 act='identity' includeBias=FALSE} srcLayers={'b_n_9'};
+
+AddLayer / model='Tiny-Yolov2' 
+name='detection1' layer={
+type='detection'
+		detectionModelType = "YOLOV2"
+		classNumber = 1
+		gridNumber = 13
+		coordNumber = 4
+		predictionsPerGrid = 2
+		anchors =	{12.03057, 17.26388,
+			 29.22076, 13.9872
+			}
+		softMaxForClassProb = True
+                 		objectScale = 3          
+                  	predictionNotAObjectScale =2.5
+                  	classScale = 0
+                  	coordScale = 1
+                  	coordType = "YOLO"
+		detectionThreshold = .15
+                  	iouThreshold = .7
+		trainIouThreshold=.65
+}
+srcLayers={'ConVL7'};
+/* Apply Horizontal flipping */
+mytbl.name  ="Tiny-Yolov2"; 
+mytbl.where = "_DLKey0_ = 'input1' and  _DLKey1_ = 'inputopts.flip'";
+table.update /  table=mytbl  set = {{var="_DLNumVal_", value='4'}};
+quit;
